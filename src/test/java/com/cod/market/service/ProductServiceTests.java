@@ -16,7 +16,7 @@ public class ProductServiceTests {
     @DisplayName("강의 제품 생성")
     void test1() {
         for ( int i = 1; i <= 200; i++ ) {
-            String name = String.format("테스트 상품:[%03d]", i);
+            String name = String.format("고냥이:[%03d]", i);
             int price = 1;
             productService.create(name, price);
         }
