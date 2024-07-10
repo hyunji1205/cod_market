@@ -12,7 +12,7 @@
             </li>
             <li class="list-group-item">
                 <span>번호 : </span>
-                <span class="badge bg-primary">123</span>
+                <span class="badge bg-primary" th:text="${product.id}"></span>
             </li>
             <li class="list-group-item">
                 <span>등록날짜 : </span>
@@ -40,10 +40,23 @@
                 질문등록
             </div>
             <div class="card-body">
-                <form action="#" method="POST">
-                    폼 내용
+                <form sec:authorize="isAuthenticated()" action="@{/question/create}" method="POST">
+                    <div class="mt3">
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">제목</label>
+                            <input type="text" name="subject" id="subject" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="content" class="form-label">내용</label>
+                            <input type="text" name="content" id="content" class="form-control">
+                        </div>
+                        <input type="submit" value="등록하기" class="btn btn-primary">
+                    </div>
                 </form>
-                <a href="#">로그인</a> 후 이용해주세요.
+                <div sec:authorize="isAnonymous()">
+                    <a href="@{/member/login}">로그인</a> 후 이용해주세요.
+                </div>
+
             </div>
         </div>
 
