@@ -1,6 +1,5 @@
 package com.cod.market.product.controller;
 
-
 import com.cod.market.product.entity.Product;
 import com.cod.market.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -16,15 +15,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 @RequestMapping("/product")
 public class ProductController {
-
     private final ProductService productService;
 
     @GetMapping("/list")
     public String list(
-            Model model, @
-            RequestParam(value = "page" , defaultValue = "0") int page) {
-        Page<Product> paging = productService.getList(page);
+            Model model,
+            @RequestParam(value = "page", defaultValue = "0") int page,
+            @RequestParam(value="kw", defaultValue="") String kw
+    ) {
+        Page<Product> paging = productService.getList(page, kw);
+
         model.addAttribute("paging", paging);
+        model.addAttribute("kw", kw);
         return "product/list";
     }
 
