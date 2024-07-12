@@ -1,4 +1,4 @@
-package com.cod.market.cart.reopsitory;
+package com.cod.market.cart.repository;
 
 import com.cod.market.cart.entity.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
