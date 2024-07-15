@@ -5,9 +5,8 @@ import com.cod.market.cart.entity.Cart;
 import com.cod.market.market.entity.Market;
 import com.cod.market.question.entity.Question;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
@@ -15,6 +14,9 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Product extends BaseEntity {
     private String name;
     private String description;
