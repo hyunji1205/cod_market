@@ -4,7 +4,9 @@ import com.cod.market.base.entity.BaseEntity;
 import com.cod.market.cart.entity.Cart;
 import com.cod.market.question.entity.Question;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
@@ -14,6 +16,8 @@ import java.util.List;
 @Getter
 @Setter
 @SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Member extends BaseEntity {
     private String username;
     private String password;
