@@ -25,5 +25,8 @@ public class Member extends BaseEntity {
     private List<Question> questionList;
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.REMOVE)
+    private List<Question> ProductList;
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.REMOVE)
     private List<Cart> cartList;
 }
