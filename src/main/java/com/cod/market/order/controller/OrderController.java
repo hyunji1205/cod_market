@@ -21,9 +21,13 @@ import java.util.Base64;
 @Controller
 @RequestMapping("/order")
 public class OrderController {
-@Value("${custom.paymentSecretKey}")
-private String paymentSecretKey;
+    @Value("${custom.paymentSecretKey}")
+    private String paymentSecretKey;
 
+    @GetMapping("/detail")
+    public String detail() {
+        return "order/detail";
+    }
 
     @GetMapping("/success")
     public String paymentResult(
