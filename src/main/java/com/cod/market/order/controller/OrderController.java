@@ -81,7 +81,7 @@ private String paymentSecretKey;
             model.addAttribute("message", (String) jsonObject.get("message"));
         }
 
-        return "success";
+        return "order/success";
     }
 
     @GetMapping("/fail")
